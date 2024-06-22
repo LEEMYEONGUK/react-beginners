@@ -22,25 +22,44 @@
   ></script>
   <script type="text/babel">
     const root = document.getElementById("root");
-    let counter = 0
+    const Title = () => (
+      <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+        Hello I'm a title
+      </h3>
+    );
+    // const h3 = React.createElement(
+    //   "h3",
+    //   {
+    //     id: "title",
+    //     onMouseEnter: () => console.log("mouse enter"),
+    //   },
+    //   "Hello I'am span"
+    // );
 
-    function countUp() {
-      counter = counter + 1
-      render()
-    }
-
-    function render() {
-      ReactDOM.render(<Container />, root)
-    }
-
+    const Button = () => (
+      <button
+        style={{ backgroundColor: "grey" }}
+        onClick={() => console.log("im clicked")}
+      >
+        Click me
+      </button>
+    );
+    // const btn = React.createElement(
+    //   "button",
+    //   {
+    //     onClick: () => console.log("im clicked"),
+    //     style: { backgroundColor: "grey" },
+    //   },
+    //   "click me"
+    // );
     const Container = () => (
     // 대문자로 적어주는 거 중요!!  
       <div>  
-        <h3>Total clicks: {counter}</h3>
-        <button onClick={countUp}>Click me</button>
+        <Title />
+        <Button />
       </div>
     )
     // const container = React.createElement("div", null, [Title, Button]);
-    render()
+    ReactDOM.render(<Container />, root);
   </script>
 </html>
